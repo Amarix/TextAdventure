@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CEB8D27-2281-46F9-A1E6-EE221C91D6F2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextAdventure_AllieBeckman</RootNamespace>
+    <AssemblyName>TextAdventure_AllieBeckman</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Allie\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://github.com/Amarix/TextAdventure.git/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D90486C5B65CF1A88194A1A29504456030A4D471</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TextAdventure_AllieBeckman_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugTwo|AnyCPU'">
+    <OutputPath>bin\DebugTwo\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adventure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adventure.Designer.cs">
+      <DependentUpon>Adventure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Directions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Directions.Designer.cs">
+      <DependentUpon>Directions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocationDisplay.cs" />
+    <Compile Include="playerOptions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Adventure.resx">
+      <DependentUpon>Adventure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Directions.resx">
+      <DependentUpon>Directions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TextAdventure_AllieBeckman_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.csproj">
+      <Project>{fb2a217b-8c57-47b4-90cd-bd9900c593c8}</Project>
+      <Name>Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bedRoom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caveEntrance.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caveIn.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\field.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livingRoom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockedDoor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roomOne.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treasureRoom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\well.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windowRoom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\field2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\field3.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insideShed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluePotIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redPotIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dongeonBedRoom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockedDoorTwo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roomTwo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goblin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knight.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\troll.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wizard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
