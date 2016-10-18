@@ -14,14 +14,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="TextAdventure_AllieBeckman.exe.manifest" size="4197">
+    <dependentAssembly dependencyType="install" codebase="TextAdventure_AllieBeckman.exe.manifest" size="4198">
       <assemblyIdentity name="TextAdventure_AllieBeckman.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dUsTSMS4xaivY26fbjIw30ya0U5EQkNR2niN7td721Y=</dsig:DigestValue>
+        <dsig:DigestValue>p9MlQwKYsc1WiG7Qh8q0yTeqj2+vg3BLkfZhMFZENEM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

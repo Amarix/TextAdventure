@@ -73,6 +73,16 @@ namespace TextAdventure_AllieBeckman.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap basement {
+            get {
+                object obj = ResourceManager.GetObject("basement", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bedRoom {
             get {
                 object obj = ResourceManager.GetObject("bedRoom", resourceCulture);
@@ -113,9 +123,39 @@ namespace TextAdventure_AllieBeckman.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap demon {
+            get {
+                object obj = ResourceManager.GetObject("demon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dongeonBedRoom {
             get {
                 object obj = ResourceManager.GetObject("dongeonBedRoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dungeonCenter {
+            get {
+                object obj = ResourceManager.GetObject("dungeonCenter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dungeonHallway {
+            get {
+                object obj = ResourceManager.GetObject("dungeonHallway", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +346,16 @@ namespace TextAdventure_AllieBeckman.Properties {
         internal static System.Drawing.Bitmap staff {
             get {
                 object obj = ResourceManager.GetObject("staff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stairs {
+            get {
+                object obj = ResourceManager.GetObject("stairs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Engine.dll" size="9728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Engine.dll" size="10240">
       <assemblyIdentity name="Engine" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LHtM2KhtUMIapAEfQd8xeg4Dx1gKFUSKTnzAU2bEY+M=</dsig:DigestValue>
+        <dsig:DigestValue>Knn9+ChwmNemA5LBFWbSGMhsFjUkKrhoSAHoM0fWck4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TextAdventure_AllieBeckman.exe" size="6183936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TextAdventure_AllieBeckman.exe" size="8853504">
       <assemblyIdentity name="TextAdventure_AllieBeckman" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>h4yTYFACuufBvEWfYfRSHu186H4EM6OKULaCfKCDQKo=</dsig:DigestValue>
+        <dsig:DigestValue>YBxCTzKz5HC0QhTBZWC7io32ADpTHcr8srbPyeQj6v0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

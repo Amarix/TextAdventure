@@ -32,6 +32,7 @@
             this.statsPanel = new System.Windows.Forms.Panel();
             this.lblCurrentExp = new System.Windows.Forms.Label();
             this.lblCrntExp = new System.Windows.Forms.Label();
+            this.playerPictureBox = new System.Windows.Forms.PictureBox();
             this.lblExp = new System.Windows.Forms.Label();
             this.lblWeapon = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
@@ -50,9 +51,13 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.warningLabel = new System.Windows.Forms.Label();
             this.battlePanel = new System.Windows.Forms.Panel();
+            this.manaPotBtn = new System.Windows.Forms.Button();
             this.manaPotCnt = new System.Windows.Forms.Label();
+            this.spellIcon = new System.Windows.Forms.PictureBox();
+            this.weaponIcon = new System.Windows.Forms.PictureBox();
             this.healthPotCnt = new System.Windows.Forms.Label();
             this.magicButton = new System.Windows.Forms.Button();
+            this.healthPotBtn = new System.Windows.Forms.Button();
             this.attackButton = new System.Windows.Forms.Button();
             this.equipsPanel = new System.Windows.Forms.Panel();
             this.buyHealthBtn = new System.Windows.Forms.Button();
@@ -65,41 +70,48 @@
             this.iceSpellBtn = new System.Windows.Forms.Button();
             this.fireSpellBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.directionsBtn = new System.Windows.Forms.Button();
             this.monstAttlbl = new System.Windows.Forms.Label();
             this.yesBtn = new System.Windows.Forms.Button();
             this.noBtn = new System.Windows.Forms.Button();
-            this.manaPotBtn = new System.Windows.Forms.Button();
-            this.spellIcon = new System.Windows.Forms.PictureBox();
-            this.weaponIcon = new System.Windows.Forms.PictureBox();
-            this.healthPotBtn = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.playerPictureBox = new System.Windows.Forms.PictureBox();
-            this.backgroundPicture = new System.Windows.Forms.PictureBox();
-            this.monsterPictureBox = new System.Windows.Forms.PictureBox();
             this.playerSelectionPanel = new System.Windows.Forms.Panel();
-            this.nextBtn = new System.Windows.Forms.Button();
-            this.lblNameChose = new System.Windows.Forms.Label();
-            this.choicePicBox = new System.Windows.Forms.PictureBox();
-            this.startBtn = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblChoseHealth = new System.Windows.Forms.Label();
-            this.lblChoseStr = new System.Windows.Forms.Label();
-            this.lblChoseMana = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.lblChoseMana = new System.Windows.Forms.Label();
+            this.lblChoseStr = new System.Windows.Forms.Label();
+            this.lblChoseHealth = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.startBtn = new System.Windows.Forms.Button();
+            this.choicePicBox = new System.Windows.Forms.PictureBox();
+            this.lblNameChose = new System.Windows.Forms.Label();
+            this.nextBtn = new System.Windows.Forms.Button();
+            this.monsterPictureBox = new System.Windows.Forms.PictureBox();
+            this.backgroundPicture = new System.Windows.Forms.PictureBox();
+            this.inventoryPanel = new System.Windows.Forms.Panel();
+            this.stoneHolding = new System.Windows.Forms.Label();
+            this.invKeys = new System.Windows.Forms.Label();
+            this.invMP = new System.Windows.Forms.Label();
+            this.invHP = new System.Windows.Forms.Label();
+            this.closeInvBtn = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.statsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).BeginInit();
             this.battlePanel.SuspendLayout();
-            this.equipsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spellIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weaponIcon)).BeginInit();
+            this.equipsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backgroundPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monsterPictureBox)).BeginInit();
             this.playerSelectionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.choicePicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backgroundPicture)).BeginInit();
+            this.inventoryPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // statsPanel
@@ -140,6 +152,18 @@
             this.lblCrntExp.Name = "lblCrntExp";
             this.lblCrntExp.Size = new System.Drawing.Size(65, 13);
             this.lblCrntExp.TabIndex = 11;
+            // 
+            // playerPictureBox
+            // 
+            this.playerPictureBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.playerPictureBox.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.wizard;
+            this.playerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.playerPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.playerPictureBox.Location = new System.Drawing.Point(4, 9);
+            this.playerPictureBox.Name = "playerPictureBox";
+            this.playerPictureBox.Size = new System.Drawing.Size(56, 58);
+            this.playerPictureBox.TabIndex = 10;
+            this.playerPictureBox.TabStop = false;
             // 
             // lblExp
             // 
@@ -310,6 +334,17 @@
             this.battlePanel.Size = new System.Drawing.Size(153, 97);
             this.battlePanel.TabIndex = 9;
             // 
+            // manaPotBtn
+            // 
+            this.manaPotBtn.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.bluePotIcon;
+            this.manaPotBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.manaPotBtn.Location = new System.Drawing.Point(77, 25);
+            this.manaPotBtn.Name = "manaPotBtn";
+            this.manaPotBtn.Size = new System.Drawing.Size(41, 33);
+            this.manaPotBtn.TabIndex = 5;
+            this.manaPotBtn.UseVisualStyleBackColor = true;
+            this.manaPotBtn.Click += new System.EventHandler(this.manaPotBtn_Click);
+            // 
             // manaPotCnt
             // 
             this.manaPotCnt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -319,6 +354,26 @@
             this.manaPotCnt.TabIndex = 6;
             this.manaPotCnt.Text = "0";
             this.manaPotCnt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // spellIcon
+            // 
+            this.spellIcon.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.fire;
+            this.spellIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.spellIcon.Location = new System.Drawing.Point(115, 61);
+            this.spellIcon.Name = "spellIcon";
+            this.spellIcon.Size = new System.Drawing.Size(29, 23);
+            this.spellIcon.TabIndex = 5;
+            this.spellIcon.TabStop = false;
+            // 
+            // weaponIcon
+            // 
+            this.weaponIcon.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.sword;
+            this.weaponIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.weaponIcon.Location = new System.Drawing.Point(115, 0);
+            this.weaponIcon.Name = "weaponIcon";
+            this.weaponIcon.Size = new System.Drawing.Size(29, 23);
+            this.weaponIcon.TabIndex = 4;
+            this.weaponIcon.TabStop = false;
             // 
             // healthPotCnt
             // 
@@ -339,6 +394,18 @@
             this.magicButton.Text = "Magic";
             this.magicButton.UseVisualStyleBackColor = true;
             this.magicButton.Click += new System.EventHandler(this.magicButton_Click);
+            // 
+            // healthPotBtn
+            // 
+            this.healthPotBtn.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.redPotIcon;
+            this.healthPotBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.healthPotBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.healthPotBtn.Location = new System.Drawing.Point(5, 25);
+            this.healthPotBtn.Name = "healthPotBtn";
+            this.healthPotBtn.Size = new System.Drawing.Size(41, 33);
+            this.healthPotBtn.TabIndex = 6;
+            this.healthPotBtn.UseVisualStyleBackColor = true;
+            this.healthPotBtn.Click += new System.EventHandler(this.healthPotBtn_Click);
             // 
             // attackButton
             // 
@@ -485,6 +552,16 @@
             this.label7.Text = "Equipment";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.insideShed;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(-10, -7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(549, 237);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
             // directionsBtn
             // 
             this.directionsBtn.Location = new System.Drawing.Point(395, 537);
@@ -531,92 +608,6 @@
             this.noBtn.Visible = false;
             this.noBtn.Click += new System.EventHandler(this.noBtn_Click);
             // 
-            // manaPotBtn
-            // 
-            this.manaPotBtn.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.bluePotIcon;
-            this.manaPotBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.manaPotBtn.Location = new System.Drawing.Point(77, 25);
-            this.manaPotBtn.Name = "manaPotBtn";
-            this.manaPotBtn.Size = new System.Drawing.Size(41, 33);
-            this.manaPotBtn.TabIndex = 5;
-            this.manaPotBtn.UseVisualStyleBackColor = true;
-            this.manaPotBtn.Click += new System.EventHandler(this.manaPotBtn_Click);
-            // 
-            // spellIcon
-            // 
-            this.spellIcon.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.fire;
-            this.spellIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.spellIcon.Location = new System.Drawing.Point(115, 61);
-            this.spellIcon.Name = "spellIcon";
-            this.spellIcon.Size = new System.Drawing.Size(29, 23);
-            this.spellIcon.TabIndex = 5;
-            this.spellIcon.TabStop = false;
-            // 
-            // weaponIcon
-            // 
-            this.weaponIcon.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.sword;
-            this.weaponIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.weaponIcon.Location = new System.Drawing.Point(115, 0);
-            this.weaponIcon.Name = "weaponIcon";
-            this.weaponIcon.Size = new System.Drawing.Size(29, 23);
-            this.weaponIcon.TabIndex = 4;
-            this.weaponIcon.TabStop = false;
-            // 
-            // healthPotBtn
-            // 
-            this.healthPotBtn.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.redPotIcon;
-            this.healthPotBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.healthPotBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.healthPotBtn.Location = new System.Drawing.Point(5, 25);
-            this.healthPotBtn.Name = "healthPotBtn";
-            this.healthPotBtn.Size = new System.Drawing.Size(41, 33);
-            this.healthPotBtn.TabIndex = 6;
-            this.healthPotBtn.UseVisualStyleBackColor = true;
-            this.healthPotBtn.Click += new System.EventHandler(this.healthPotBtn_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.insideShed;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(-10, -7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(549, 237);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // playerPictureBox
-            // 
-            this.playerPictureBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.playerPictureBox.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.wizard;
-            this.playerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.playerPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.playerPictureBox.Location = new System.Drawing.Point(4, 9);
-            this.playerPictureBox.Name = "playerPictureBox";
-            this.playerPictureBox.Size = new System.Drawing.Size(56, 58);
-            this.playerPictureBox.TabIndex = 10;
-            this.playerPictureBox.TabStop = false;
-            // 
-            // backgroundPicture
-            // 
-            this.backgroundPicture.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.roomTwo;
-            this.backgroundPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.backgroundPicture.Location = new System.Drawing.Point(12, 12);
-            this.backgroundPicture.Name = "backgroundPicture";
-            this.backgroundPicture.Size = new System.Drawing.Size(539, 370);
-            this.backgroundPicture.TabIndex = 2;
-            this.backgroundPicture.TabStop = false;
-            this.backgroundPicture.Click += new System.EventHandler(this.backgroundPicture_Click);
-            // 
-            // monsterPictureBox
-            // 
-            this.monsterPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.monsterPictureBox.Location = new System.Drawing.Point(19, 201);
-            this.monsterPictureBox.Name = "monsterPictureBox";
-            this.monsterPictureBox.Size = new System.Drawing.Size(110, 99);
-            this.monsterPictureBox.TabIndex = 19;
-            this.monsterPictureBox.TabStop = false;
-            this.monsterPictureBox.Visible = false;
-            // 
             // playerSelectionPanel
             // 
             this.playerSelectionPanel.Controls.Add(this.label12);
@@ -635,35 +626,75 @@
             this.playerSelectionPanel.Size = new System.Drawing.Size(540, 546);
             this.playerSelectionPanel.TabIndex = 20;
             // 
-            // nextBtn
+            // label12
             // 
-            this.nextBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextBtn.Location = new System.Drawing.Point(7, 483);
-            this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(146, 60);
-            this.nextBtn.TabIndex = 0;
-            this.nextBtn.Text = "Next";
-            this.nextBtn.UseVisualStyleBackColor = true;
-            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(539, 304);
+            this.label12.TabIndex = 13;
+            this.label12.Text = resources.GetString("label12.Text");
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblNameChose
+            // lblChoseMana
             // 
-            this.lblNameChose.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameChose.Location = new System.Drawing.Point(5, 304);
-            this.lblNameChose.Name = "lblNameChose";
-            this.lblNameChose.Size = new System.Drawing.Size(148, 23);
-            this.lblNameChose.TabIndex = 2;
-            this.lblNameChose.Text = "Name";
-            this.lblNameChose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblChoseMana.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblChoseMana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChoseMana.Location = new System.Drawing.Point(289, 446);
+            this.lblChoseMana.Name = "lblChoseMana";
+            this.lblChoseMana.Size = new System.Drawing.Size(65, 23);
+            this.lblChoseMana.TabIndex = 11;
+            this.lblChoseMana.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // choicePicBox
+            // lblChoseStr
             // 
-            this.choicePicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.choicePicBox.Location = new System.Drawing.Point(7, 330);
-            this.choicePicBox.Name = "choicePicBox";
-            this.choicePicBox.Size = new System.Drawing.Size(146, 147);
-            this.choicePicBox.TabIndex = 3;
-            this.choicePicBox.TabStop = false;
+            this.lblChoseStr.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblChoseStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChoseStr.Location = new System.Drawing.Point(289, 402);
+            this.lblChoseStr.Name = "lblChoseStr";
+            this.lblChoseStr.Size = new System.Drawing.Size(65, 23);
+            this.lblChoseStr.TabIndex = 10;
+            this.lblChoseStr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblChoseHealth
+            // 
+            this.lblChoseHealth.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblChoseHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChoseHealth.Location = new System.Drawing.Point(289, 360);
+            this.lblChoseHealth.Name = "lblChoseHealth";
+            this.lblChoseHealth.Size = new System.Drawing.Size(65, 23);
+            this.lblChoseHealth.TabIndex = 9;
+            this.lblChoseHealth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(218, 446);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 23);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Mana";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(192, 402);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(91, 23);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Strength";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(218, 360);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 23);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Health";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // startBtn
             // 
@@ -676,75 +707,164 @@
             this.startBtn.UseVisualStyleBackColor = true;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
-            // label8
+            // choicePicBox
             // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(218, 360);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 23);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Health";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.choicePicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.choicePicBox.Location = new System.Drawing.Point(7, 330);
+            this.choicePicBox.Name = "choicePicBox";
+            this.choicePicBox.Size = new System.Drawing.Size(146, 147);
+            this.choicePicBox.TabIndex = 3;
+            this.choicePicBox.TabStop = false;
             // 
-            // label9
+            // lblNameChose
             // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(192, 402);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 23);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Strength";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNameChose.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameChose.Location = new System.Drawing.Point(5, 304);
+            this.lblNameChose.Name = "lblNameChose";
+            this.lblNameChose.Size = new System.Drawing.Size(148, 23);
+            this.lblNameChose.TabIndex = 2;
+            this.lblNameChose.Text = "Name";
+            this.lblNameChose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // nextBtn
             // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(218, 446);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 23);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Mana";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nextBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextBtn.Location = new System.Drawing.Point(7, 483);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Size = new System.Drawing.Size(146, 60);
+            this.nextBtn.TabIndex = 0;
+            this.nextBtn.Text = "Next";
+            this.nextBtn.UseVisualStyleBackColor = true;
+            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
             // 
-            // lblChoseHealth
+            // monsterPictureBox
             // 
-            this.lblChoseHealth.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblChoseHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChoseHealth.Location = new System.Drawing.Point(289, 360);
-            this.lblChoseHealth.Name = "lblChoseHealth";
-            this.lblChoseHealth.Size = new System.Drawing.Size(65, 23);
-            this.lblChoseHealth.TabIndex = 9;
-            this.lblChoseHealth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.monsterPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.monsterPictureBox.Location = new System.Drawing.Point(19, 201);
+            this.monsterPictureBox.Name = "monsterPictureBox";
+            this.monsterPictureBox.Size = new System.Drawing.Size(110, 99);
+            this.monsterPictureBox.TabIndex = 19;
+            this.monsterPictureBox.TabStop = false;
+            this.monsterPictureBox.Visible = false;
             // 
-            // lblChoseStr
+            // backgroundPicture
             // 
-            this.lblChoseStr.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblChoseStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChoseStr.Location = new System.Drawing.Point(289, 402);
-            this.lblChoseStr.Name = "lblChoseStr";
-            this.lblChoseStr.Size = new System.Drawing.Size(65, 23);
-            this.lblChoseStr.TabIndex = 10;
-            this.lblChoseStr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.backgroundPicture.BackgroundImage = global::TextAdventure_AllieBeckman.Properties.Resources.roomTwo;
+            this.backgroundPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.backgroundPicture.Location = new System.Drawing.Point(12, 12);
+            this.backgroundPicture.Name = "backgroundPicture";
+            this.backgroundPicture.Size = new System.Drawing.Size(539, 370);
+            this.backgroundPicture.TabIndex = 2;
+            this.backgroundPicture.TabStop = false;
+            this.backgroundPicture.Click += new System.EventHandler(this.backgroundPicture_Click);
             // 
-            // lblChoseMana
+            // inventoryPanel
             // 
-            this.lblChoseMana.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblChoseMana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChoseMana.Location = new System.Drawing.Point(289, 446);
-            this.lblChoseMana.Name = "lblChoseMana";
-            this.lblChoseMana.Size = new System.Drawing.Size(65, 23);
-            this.lblChoseMana.TabIndex = 11;
-            this.lblChoseMana.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.inventoryPanel.Controls.Add(this.stoneHolding);
+            this.inventoryPanel.Controls.Add(this.invKeys);
+            this.inventoryPanel.Controls.Add(this.invMP);
+            this.inventoryPanel.Controls.Add(this.invHP);
+            this.inventoryPanel.Controls.Add(this.closeInvBtn);
+            this.inventoryPanel.Controls.Add(this.label16);
+            this.inventoryPanel.Controls.Add(this.label15);
+            this.inventoryPanel.Controls.Add(this.label14);
+            this.inventoryPanel.Controls.Add(this.label13);
+            this.inventoryPanel.Controls.Add(this.label11);
+            this.inventoryPanel.Location = new System.Drawing.Point(1, 316);
+            this.inventoryPanel.Name = "inventoryPanel";
+            this.inventoryPanel.Size = new System.Drawing.Size(299, 155);
+            this.inventoryPanel.TabIndex = 14;
+            this.inventoryPanel.Visible = false;
             // 
-            // label12
+            // stoneHolding
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(539, 304);
-            this.label12.TabIndex = 13;
-            this.label12.Text = resources.GetString("label12.Text");
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.stoneHolding.Location = new System.Drawing.Point(213, 61);
+            this.stoneHolding.Name = "stoneHolding";
+            this.stoneHolding.Size = new System.Drawing.Size(75, 50);
+            this.stoneHolding.TabIndex = 9;
+            this.stoneHolding.Text = "None";
+            this.stoneHolding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // invKeys
+            // 
+            this.invKeys.AutoSize = true;
+            this.invKeys.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invKeys.Location = new System.Drawing.Point(179, 71);
+            this.invKeys.Name = "invKeys";
+            this.invKeys.Size = new System.Drawing.Size(30, 31);
+            this.invKeys.TabIndex = 8;
+            this.invKeys.Text = "0";
+            // 
+            // invMP
+            // 
+            this.invMP.AutoSize = true;
+            this.invMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invMP.Location = new System.Drawing.Point(114, 71);
+            this.invMP.Name = "invMP";
+            this.invMP.Size = new System.Drawing.Size(30, 31);
+            this.invMP.TabIndex = 7;
+            this.invMP.Text = "0";
+            // 
+            // invHP
+            // 
+            this.invHP.AutoSize = true;
+            this.invHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invHP.Location = new System.Drawing.Point(32, 71);
+            this.invHP.Name = "invHP";
+            this.invHP.Size = new System.Drawing.Size(30, 31);
+            this.invHP.TabIndex = 6;
+            this.invHP.Text = "0";
+            // 
+            // closeInvBtn
+            // 
+            this.closeInvBtn.Location = new System.Drawing.Point(208, 119);
+            this.closeInvBtn.Name = "closeInvBtn";
+            this.closeInvBtn.Size = new System.Drawing.Size(75, 23);
+            this.closeInvBtn.TabIndex = 5;
+            this.closeInvBtn.Text = "Close";
+            this.closeInvBtn.UseVisualStyleBackColor = true;
+            this.closeInvBtn.Click += new System.EventHandler(this.closeInvBtn_Click);
+            // 
+            // label16
+            // 
+            this.label16.Location = new System.Drawing.Point(231, 46);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 15);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Stones";
+            // 
+            // label15
+            // 
+            this.label15.Location = new System.Drawing.Point(182, 46);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(62, 15);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Keys";
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(97, 46);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 15);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Mana Potions";
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(9, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(179, 23);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Inventory";
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(9, 47);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 14);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Health Potions";
             // 
             // Adventure
             // 
@@ -752,6 +872,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(563, 570);
+            this.Controls.Add(this.inventoryPanel);
             this.Controls.Add(this.playerSelectionPanel);
             this.Controls.Add(this.monsterPictureBox);
             this.Controls.Add(this.noBtn);
@@ -774,16 +895,18 @@
             this.Text = "Adventure";
             this.statsPanel.ResumeLayout(false);
             this.statsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).EndInit();
             this.battlePanel.ResumeLayout(false);
-            this.equipsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spellIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.weaponIcon)).EndInit();
+            this.equipsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backgroundPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monsterPictureBox)).EndInit();
             this.playerSelectionPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.choicePicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backgroundPicture)).EndInit();
+            this.inventoryPanel.ResumeLayout(false);
+            this.inventoryPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -851,6 +974,17 @@
         private System.Windows.Forms.Label lblNameChose;
         private System.Windows.Forms.Button nextBtn;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel inventoryPanel;
+        private System.Windows.Forms.Label invMP;
+        private System.Windows.Forms.Label invHP;
+        private System.Windows.Forms.Button closeInvBtn;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label stoneHolding;
+        private System.Windows.Forms.Label invKeys;
     }
 }
 

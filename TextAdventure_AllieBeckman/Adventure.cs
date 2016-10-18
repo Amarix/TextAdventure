@@ -22,7 +22,7 @@ namespace TextAdventure_AllieBeckman
         // initalize new location
         private Location currentLocation;
         // array of game locations
-        private Location[,] gameMap = new Location[5, 3];
+        private Location[,] gameMap = new Location[5, 7];
         // ints to navigate through 2D array
         private int x;
         private int y;
@@ -33,7 +33,7 @@ namespace TextAdventure_AllieBeckman
         // a boolean to tell if a monster is present
         bool isMonster;
         // an array of monster images to display when a monster is present
-        Image[] monsterImage = new Image[3];
+        Image[] monsterImage = new Image[4];
         // magic object
         private Magic magic;
         // an int to determine that monsters in room have been killed and
@@ -44,26 +44,46 @@ namespace TextAdventure_AllieBeckman
         // set temp char choice and an index to count through if
         // user presses next
         int selectionIndex;
+        // int of item in room
+        // 1 = health pot, 2 = mana pot, 3 = key
+        int itemNumber;
+        //keytruefalse
+        bool hasKey;
+        bool doorIsOpen;
+        // an array of useful items
+        Item[] item = new Item[6];
+        // to check how many monsters have been killed
+        int monsterKillCount;
+
+        // invatory count
+        int hpPot;
+        int mpPot;
+        int key;
+        string stone;
 
         public Adventure()
         {
             InitializeComponent();
             // array of game locations
-            gameMap[0, 0] = new Location(2, "Bed", "The bed where you sleep.");
-            gameMap[0, 1] = new Location(1, "Home", "This is your home.");
-            gameMap[0, 2] = new Location(3, "Window", "You see your field outside.");
-            gameMap[1, 0] = new Location(6, "Well", "The well water is refreshing.");
-            gameMap[1, 1] = new Location(4, "Field", "A field in front of your house.");
-            gameMap[1, 2] = new Location(5, "Shed", "A place to keep your weapons.");
-            gameMap[2, 0] = new Location(13, "Field", "Nothing this way.");
-            gameMap[2, 1] = new Location(7, "Dungeon Entrance", "You can hear something coming from the cave.");
-            gameMap[2, 2] = new Location(14, "Field", "Nothing this way.");
-            gameMap[3, 0] = new Location(9, "Blocked Path", "There has been a cave in here.");
-            gameMap[3, 1] = new Location(8, "Dungeon Room", "You can see the exit from here.");
-            gameMap[3, 2] = new Location(10, "Locked Door", "A locked door");
-            gameMap[4, 0] = new Location(12, "Wall", "Nothing this way.");
-            gameMap[4, 1] = new Location(11, "Treasure Room", "There is a treasure box here.");
-            gameMap[4, 2] = new Location(12, "Wall", "Nothing this way.");
+            gameMap[0, 0] = new Location(2, "Bed", "The bed where you sleep.", 0);
+            gameMap[0, 1] = new Location(1, "Home", "This is your home.", 5);
+            gameMap[0, 2] = new Location(3, "Window", "You see your field outside.", 6);
+            gameMap[1, 0] = new Location(6, "Well", "The well water is refreshing.", 1);
+            gameMap[1, 1] = new Location(4, "Field", "A field in front of your house.", 4);
+            gameMap[1, 2] = new Location(5, "Shed", "A place to keep your weapons.", 0);
+            gameMap[2, 0] = new Location(13, "Field", "Nothing this way.", 0);
+            gameMap[2, 1] = new Location(7, "Dungeon Entrance", "You can hear something coming from the cave.", 0);
+            gameMap[2, 2] = new Location(14, "Field", "Nothing this way.", 0);
+            gameMap[3, 0] = new Location(9, "Blocked Path", "There has been a cave in here.", 0);
+            gameMap[3, 1] = new Location(8, "Dungeon Room", "You can see the exit from here.", 0);
+            gameMap[3, 2] = new Location(10, "Locked Door", "A locked door", 0);
+            gameMap[3, 3] = new Location(15, "Dungeon Stairs", "Go down the stairs?", 0);
+            gameMap[3, 4] = new Location(16, "Basement", "It's dark and cold here", 0);
+            gameMap[3, 5] = new Location(17, "Basement Hall", "Theres a small light ahead,", 2);
+            gameMap[3, 6] = new Location(18, "Dungeon Center", "There are so many hallways connecting here!", 0);
+            gameMap[4, 0] = new Location(12, "Wall", "Nothing this way.", 0);
+            gameMap[4, 1] = new Location(11, "Treasure Room", "There is a treasure box here.", 0);
+            gameMap[4, 2] = new Location(12, "Wall", "Nothing this way.", 3);
 
             // set current location for game start
             currentLocation = gameMap[0, 1];
@@ -72,11 +92,20 @@ namespace TextAdventure_AllieBeckman
             monsterImage[0] = TextAdventure_AllieBeckman.Properties.Resources.imp;
             monsterImage[1] = TextAdventure_AllieBeckman.Properties.Resources.goblin;
             monsterImage[2] = TextAdventure_AllieBeckman.Properties.Resources.troll;
+            monsterImage[3] = TextAdventure_AllieBeckman.Properties.Resources.demon;
 
-            // set current array index ints
+            // set currentLocation array index ints
             x = 0;
             y = 1;
             selectionIndex = 0;
+
+            // an array of items for this game
+            item[0] = new Item(1, "Health Potion", "A potion to restore health.");
+            item[1] = new Item(2, "Mana Potion", "A potion to restore mana.");
+            item[2] = new Item(3, "Key", "A metal object used to unlock doors.");
+            item[3] = new Item(4, "Stone of Strength", "A small stone in the shape of a sword. You feel stronger when you hold it.");
+            item[4] = new Item(5, "Stone of Magic", "A small blue stone. You feel magical energy flowing from it.");
+            item[5] = new Item(6, "Stone of Protection", "A small stone with a shield carved into it. You feel more alive holding it.");
 
             // display current location to screen
             gameDisplay(currentLocation);
@@ -85,6 +114,8 @@ namespace TextAdventure_AllieBeckman
             isMonster = false;
             // monster isn't killed yet
             monstKilled = 0;
+            //number of monsters killed
+            monsterKillCount = 0;
 
             // set players auto magic and weapon choice
             magic = new Magic("fire");
@@ -97,6 +128,10 @@ namespace TextAdventure_AllieBeckman
 
             // first choice of char
             characterChoice();
+
+            // starting out you do not have a key
+            hasKey = false;
+            doorIsOpen = false;
         }
 
 
@@ -116,6 +151,46 @@ namespace TextAdventure_AllieBeckman
             {
                 // call the navigate method
                 navigate();
+            }
+
+            if (cmd == "look")
+            {
+                // call the method to search for an item
+                lookAround();
+            }
+
+            if (cmd == "inventory" || cmd == "inv")
+            {
+                invHP.Text = hpPot.ToString();
+                invMP.Text = mpPot.ToString();
+                invKeys.Text = key.ToString();
+                stoneHolding.Text = stone;
+                inventory();
+            }
+
+            if (cmd == "take")
+            {
+                take();
+            }
+
+            if (cmd == "drop")
+            {
+                drop();
+            }
+
+            if (cmd == "open")
+            {
+                openDoor();
+            }
+
+            if (cmd == "score")
+            {
+                killScore();
+            }
+
+            if (cmd == "quit")
+            {
+                this.Close();
             }
 
             commandTextBox.SelectAll();
@@ -202,7 +277,9 @@ namespace TextAdventure_AllieBeckman
             if(exp >= 2)
             {
                 // add a new potion to your potions
-                manaPotCnt.Text = (currentPots + 1).ToString();
+                mpPot = mpPot + 1;
+                manaPotCnt.Text = mpPot.ToString();
+
                 // subtract the exp cost from players exp
                 _player.ExperiencePts = _player.ExperiencePts - 2;
 
@@ -223,7 +300,9 @@ namespace TextAdventure_AllieBeckman
             if (exp >= 2)
             {
                 // add a new potion to your potions
-                healthPotCnt.Text = (currentPots + 1).ToString();
+                hpPot = hpPot + 1;
+                healthPotCnt.Text = hpPot.ToString();
+
                 // subtract the exp cost from players exp
                 _player.ExperiencePts = _player.ExperiencePts - 2;
 
@@ -354,6 +433,8 @@ namespace TextAdventure_AllieBeckman
                 // if monster dies
                 if (monsterOne.CurrentHealth <= 0)
                 {
+                    // monster kill count up
+                    monsterKillCount++;
                     // make monster image dissapear
                     monsterPictureBox.Visible = false;
                     // get exp points for monster
@@ -400,6 +481,8 @@ namespace TextAdventure_AllieBeckman
             // check if monster died
             if (monstHealth <= 0)
             {
+                // monster kill count up
+                monsterKillCount++;
                 // make monster image dissapear
                 monsterPictureBox.Visible = false;
                 // get exp points for monster
@@ -555,6 +638,16 @@ namespace TextAdventure_AllieBeckman
 
         }
 
+        public void killScore()
+        {
+            warningLabel.Text = "You have killed a total of " + monsterKillCount + " monsters!";
+        }
+
+        public void inventory()
+        {
+            inventoryPanel.Visible = true;
+        }
+
         //ROOMS WHERE MONSTER APPEARS METHOD
         // if monster appears
         public void monsterRoom()
@@ -568,7 +661,9 @@ namespace TextAdventure_AllieBeckman
             // and treasure room.
             if (i == 8 && monstKilled == 0 ||
                 i == 9 && monstKilled == 0||
-                i == 11 && monstKilled == 0)
+                i == 11 && monstKilled == 0||
+                i == 17 && monstKilled == 0||
+                i == 16 && monstKilled == 0)
             {
                 // array of monsters
                 monsters[0] = new Monster(5, 5, 2, "Imp", 2, 2);
@@ -596,6 +691,29 @@ namespace TextAdventure_AllieBeckman
 
                 // display monster image
                 monsterPictureBox.BackgroundImage = monsterImage[monsterIndex];
+                monsterPictureBox.Visible = true;
+
+                // battle panel with attack button etc. active
+                battlePanel.Enabled = true;
+            }
+            else if (i == 18 && monstKilled == 0)
+            {
+                Monster boss = new Monster(100, 100, 4, "Demon", 10, 50);
+                // define new monster
+                monsterOne = boss;
+
+                // monster is present
+                isMonster = true;
+
+                // cant leave until the monster is dead
+                enterButton.Enabled = false;
+
+                // display monster stats
+                warningLabel.Text = "This one is HUGE!"
+                    + "\n Name: " + monsterOne.getName()
+                    + "\n Health: " + monsterOne.CurrentHealth;
+                // display monster image
+                monsterPictureBox.BackgroundImage = monsterImage[3];
                 monsterPictureBox.Visible = true;
 
                 // battle panel with attack button etc. active
@@ -772,27 +890,66 @@ namespace TextAdventure_AllieBeckman
         public Location moveWest()
         {
             // if statement to make sure you don't go further than
-            // the array limits
-            if (y < 2)
+            // the array limits the dungeon is longer at row 3
+            if (x == 3 && hasKey && doorIsOpen)
             {
-                // y was set to the first original location
-                // add to it
-                y++;
-                // make the current location the new location
-                // with the new y value as the first index
-                Location newLocation = gameMap[x, y];
-                currentLocation = newLocation;
-                // take away the warning if it's there
-                warningLabel.Text = "";
+                if (y < 6)
+                {
+                    // y was set to the first original location
+                    // add to it
+                    y++;
+                    // make the current location the new location
+                    // with the new y value as the first index
+                    Location newLocation = gameMap[x, y];
+                    currentLocation = newLocation;
+                    // take away the warning if it's there
+                    warningLabel.Text = "";
+                }
+                else
+                {
+                    // cannot go further/ map ends
+                    warningLabel.Text = "cannot move any further";
+                }
             }
             else
             {
-                // cannot go further/ map ends
-                warningLabel.Text = "cannot move any further";
-            }
 
+                if (y < 2)
+                {
+                    // y was set to the first original location
+                    // add to it
+                    y++;
+                    // make the current location the new location
+                    // with the new y value as the first index
+                    Location newLocation = gameMap[x, y];
+                    currentLocation = newLocation;
+                    // take away the warning if it's there
+                    warningLabel.Text = "";
+                }
+                else
+                {
+                    if (x == 3)
+                    {
+                        warningLabel.Text = "The door is locked";
+                    }
+                    else
+                    {
+                        // cannot go further/ map ends
+                        warningLabel.Text = "cannot move any further";
+                    }
+                }
+            }
             // return new location
             return currentLocation;
+        }
+
+        public void openDoor()
+        {
+            if (x == 3 && y == 2 && hasKey)
+            {
+                warningLabel.Text = "You unlocked the door";
+                doorIsOpen = true;
+            }
         }
 
         //SLEEP OPTION METHOD
@@ -817,25 +974,15 @@ namespace TextAdventure_AllieBeckman
 
         public void useManaPot()
         {
-            // get current amount of potions
-            int potionAmount;
-            try
-            {
-                potionAmount = int.Parse(manaPotCnt.Text.ToString());
-            }
-            catch
-            {
-                potionAmount = 0;
-            }
 
             // if potion available
-            if (potionAmount >= 1)
+            if (mpPot >= 1)
             {
                 // add to players mana
                 _player.Mana = _player.Mana + 3;
                 // remove the potion that was used
-                potionAmount = potionAmount - 1;
-                manaPotCnt.Text = potionAmount.ToString();
+                mpPot = mpPot - 1;
+                manaPotCnt.Text = mpPot.ToString();
 
                 // display players new mana
                 lblMana.Text = _player.Mana.ToString();
@@ -844,30 +991,274 @@ namespace TextAdventure_AllieBeckman
 
         public void useHealthPot()
         {
-            // get current amount of potions
-            int potionAmount;
-
-            try
-            {
-                potionAmount = int.Parse(healthPotCnt.Text.ToString());
-            }
-            catch
-            {
-                potionAmount = 0;
-            }
-
             // if potion available
-            if (potionAmount >= 1)
+            if (hpPot >= 1)
             {
                 // increase players health
                 _player.CurrentHealth = _player.CurrentHealth + 3;
                 // remove the potion that was used
-                potionAmount = potionAmount - 1;
-                healthPotCnt.Text = potionAmount.ToString();
+                hpPot = hpPot - 1;
+                healthPotCnt.Text = hpPot.ToString();
 
                 // display players new mana
                 lblHealth.Text = _player.CurrentHealth.ToString();
             }
+        }
+
+        // look method used to find items such as potions and or a key in each location
+        public void lookAround()
+        {
+            itemNumber = currentLocation.getItem();
+
+            if (itemNumber == 1)
+            {
+                warningLabel.Text = "You have found a health potion!";
+                hpPot++;
+                currentLocation.itemObtained();
+            }
+            else if (itemNumber == 2)
+            {
+                warningLabel.Text = "You have found a mana potion!";
+                mpPot++;
+                currentLocation.itemObtained();
+            }
+            else if (itemNumber == 3)
+            {
+                warningLabel.Text = "You spotted a key and put it in your pocket.";
+                hasKey = true;
+                key++;
+                currentLocation.itemObtained();
+            }
+            else if (itemNumber == 4)
+            {
+                //thisItem = item[3];
+                warningLabel.Text = "Theres an odd stone on the ground.";
+            }
+            else if (itemNumber == 5)
+            {
+                //thisItem = item[4];
+                warningLabel.Text = "Theres an odd stone on the ground.";
+            }
+            else if (itemNumber == 6)
+            {
+                //thisItem = item[5];
+                warningLabel.Text = "Theres an odd stone on the ground.";
+            }
+            else
+            {
+                warningLabel.Text = "Doesn't look like there's anything around here.";
+            }
+
+            healthPotCnt.Text = hpPot.ToString();
+            manaPotCnt.Text = mpPot.ToString();
+        }
+
+        // take method to pick up an item spotted on the ground. (potions and keys are automatically picked up)
+        // stones are not because you can only hold one at a time.
+        public void take()
+        {
+            // if the item on the floor is the stone of strength
+            if (currentLocation.getItem() == 4)
+            {
+                if (stone == "Stone of Strength")
+                {
+                    warningLabel.Text = "You already have this item.";
+                }
+                else if (stone == "Stone of Magic")
+                {
+                    // drop any item you already have
+                    swap();
+
+                    // add the stats that the strength stone offers
+                    _player.Damage = _player.Damage + 5;
+                    stone = "Stone of Strength";
+                    warningLabel.Text = item[3].Description;
+
+                }
+                else if (stone == "Stone of Protection")
+                {
+                    swap();
+
+                    _player.Damage = _player.Damage + 5;
+                    stone = "Stone of Strength";
+                    warningLabel.Text = item[3].Description;
+
+                }
+                else
+                {
+                    _player.Damage = _player.Damage + 5;
+                    stone = "Stone of Strength";
+                    warningLabel.Text = item[3].Description;
+
+                    currentLocation.setItem(0);
+                }
+            }
+            // if the stone on the ground is a magic stone
+            else if (currentLocation.getItem() == 5)
+            {
+                if (stone == "Stone of Strength")
+                {
+                    swap();
+
+                    // add the stats that the magic stone offers
+                    _player.Mana = _player.Mana + 5;
+                    stone = "Stone of Magic";
+                    warningLabel.Text = item[4].Description;
+
+                }
+                else if (stone == "Stone of Magic")
+                {
+                    warningLabel.Text = "You already have this item.";
+                }
+                else if (stone == "Stone of Protection")
+                {
+                    swap();
+
+                    _player.Mana = _player.Mana + 5;
+                    stone = "Stone of Magic";
+                    warningLabel.Text = item[4].Description;
+
+                }
+                else
+                {
+                    _player.Mana = _player.Mana + 5;
+                    stone = "Stone of Magic";
+                    warningLabel.Text = item[4].Description;
+
+                    currentLocation.setItem(0);
+                }
+            }
+            // if the stone on the ground is protection stone
+            else if (currentLocation.getItem() == 6)
+            {
+                // if you already have the stone of strength
+                if (stone == "Stone of Strength")
+                {
+                    swap();
+
+                    // add stats the stone offers
+                    _player.CurrentHealth = _player.CurrentHealth + 10;
+                    _player.TotalHealth = _player.TotalHealth + 10;
+                    stone = "Stone of Protection";
+                    warningLabel.Text = item[5].Description;
+
+                }
+                // if you already have the stone of magic
+                else if (stone == "Stone of Magic")
+                {
+                    swap();
+
+                    _player.CurrentHealth = _player.CurrentHealth + 10;
+                    _player.TotalHealth = _player.TotalHealth + 10;
+                    stone = "Stone of Protection";
+                    warningLabel.Text = item[5].Description;
+
+                }
+                // if you already have the stone of protection
+                else if (stone == "Stone of Protection")
+                {
+                    warningLabel.Text = "You already have this item.";
+                }
+                // if you don't currently have any stones
+                else
+                {
+                    _player.CurrentHealth = _player.CurrentHealth + 10;
+                    _player.TotalHealth = _player.TotalHealth + 10;
+                    stone = "Stone of Protection";
+                    warningLabel.Text = item[5].Description;
+
+                    currentLocation.setItem(0);
+                }
+            }
+            else
+            {
+                warningLabel.Text = "There is nothing here to take.";
+            }
+
+            lblMana.Text = _player.Mana.ToString();
+            lblHealth.Text = _player.CurrentHealth.ToString();
+        }
+
+        // drop method is used only if there isn't already something on the floor
+        public void drop()
+        {
+            if (currentLocation.getItem() == 0)
+            {
+                if (stone == "Stone of Strength")
+                {
+                    // the stone no longer provides bonus
+                    _player.Damage = _player.Damage - 5;
+                    // the item is now left at this location
+                    currentLocation.setItem(4);
+                }
+                else if (stone == "Stone of Magic")
+                {
+                    // the stone no longer provides bonus
+                    _player.Mana = _player.Mana - 5;
+                    // the item is now left at this location
+                    currentLocation.setItem(5);
+                }
+                else if (stone == "Stone of Protection")
+                {
+                    // the stone no longer provides bonus
+                    _player.CurrentHealth = _player.CurrentHealth - 10;
+                    _player.TotalHealth = _player.TotalHealth - 10;
+                    // the item is now left at this location
+                    currentLocation.setItem(6);
+                }
+                else
+                {
+                    warningLabel.Text = "You don't have an item to drop";
+                }
+
+                lblMana.Text = _player.Mana.ToString();
+                lblHealth.Text = _player.CurrentHealth.ToString();
+                warningLabel.Text = "You have dropped the stone here";
+                stone = "Nothing";
+            }
+            else
+            {
+                warningLabel.Text = "Theres already something on the floor.";
+            }
+        }
+
+        // this is the same as the drop method without checking if something is already on the floor
+        // because it is only called in the take method meaning the user is picking up that item first
+        // then dropping the old item.
+        public void swap()
+        {
+
+            if (stone == "Stone of Strength")
+            {
+                // the stone no longer provides bonus
+                _player.Damage = _player.Damage - 5;
+                // the item is now left at this location
+                currentLocation.setItem(4);
+            }
+            else if (stone == "Stone of Magic")
+            {
+                // the stone no longer provides bonus
+                _player.Mana = _player.Mana - 5;
+                // the item is now left at this location
+                currentLocation.setItem(5);
+            }
+            else if (stone == "Stone of Protection")
+            {
+                // the stone no longer provides bonus
+                _player.CurrentHealth = _player.CurrentHealth - 10;
+                // the item is now left at this location
+                currentLocation.setItem(6);
+            }
+            else
+            {
+                warningLabel.Text = "You don't have an item to drop";
+            }
+
+            lblMana.Text = _player.Mana.ToString();
+            lblHealth.Text = _player.CurrentHealth.ToString();
+            warningLabel.Text = "You have dropped the stone here";
+            stone = "Nothing";
+
         }
 
         //GAME OVER METHOD
@@ -963,6 +1354,11 @@ namespace TextAdventure_AllieBeckman
 
             playerSelectionPanel.Enabled = false;
             playerSelectionPanel.Visible = false;
+        }
+
+        private void closeInvBtn_Click(object sender, EventArgs e)
+        {
+            inventoryPanel.Visible = false;
         }
     }
 }

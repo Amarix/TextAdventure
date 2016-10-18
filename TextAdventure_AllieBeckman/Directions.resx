@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label7.Text" xml:space="preserve">
+    <value>There are three different
+types of power stones that
+can TAKE to grow stronger.
+You can only carry one at a
+time and wherever you DROP
+one is where it stays until you
+come back to get it. So choose
+carefully which ones you leave
+behind.</value>
+  </data>
 </root>

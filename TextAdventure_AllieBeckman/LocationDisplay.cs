@@ -28,7 +28,7 @@ namespace TextAdventure_AllieBeckman
         public System.Drawing.Image getBackgroundImage()
         {
             // an array of images
-            System.Drawing.Image[] backgroundImage = new System.Drawing.Image[14];
+            System.Drawing.Image[] backgroundImage = new System.Drawing.Image[18];
             backgroundImage[0] = TextAdventure_AllieBeckman.Properties.Resources.livingRoom;
             backgroundImage[1] = TextAdventure_AllieBeckman.Properties.Resources.bedRoom;
             backgroundImage[2] = TextAdventure_AllieBeckman.Properties.Resources.windowRoom;
@@ -43,6 +43,10 @@ namespace TextAdventure_AllieBeckman
             backgroundImage[11] = TextAdventure_AllieBeckman.Properties.Resources.wall;
             backgroundImage[12] = TextAdventure_AllieBeckman.Properties.Resources.field2;
             backgroundImage[13] = TextAdventure_AllieBeckman.Properties.Resources.field3;
+            backgroundImage[14] = TextAdventure_AllieBeckman.Properties.Resources.stairs;
+            backgroundImage[15] = TextAdventure_AllieBeckman.Properties.Resources.basement;
+            backgroundImage[16] = TextAdventure_AllieBeckman.Properties.Resources.dungeonHallway;
+            backgroundImage[17] = TextAdventure_AllieBeckman.Properties.Resources.dungeonCenter;
             // return current room image
             Image = backgroundImage[ID];
 
